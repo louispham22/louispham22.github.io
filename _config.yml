@@ -1,5 +1,5 @@
 # Site settings
-title: These are records of Tung Pham's DevOps
+title: Tung Pham's Blog
 url: "https://tunglouis.github.io"    # the protocol and hostname of your site, eg. `https://tunglouis.github.io`
 #timezone: Asia/Ho_Chi_Minh
 description: >
@@ -8,7 +8,7 @@ description: >
 # Your information
 email: tungpv
 author: Tung Pham
-avatar: "https://s.gravatar.com/avatar/e6ce8d710a132daf5acfd9d67a133dbf?s=80"
+avatar: "https://avatars2.githubusercontent.com/u/10813839?s=460&v=4"
 profile: One sentence introducing yourself.
 #twitter_username: twitter_username
 #github_username:  github_username
