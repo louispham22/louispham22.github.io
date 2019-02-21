@@ -11,11 +11,11 @@ Welcome to Docker
 ![](https://www.maketecheasier.com/assets/uploads/2019/01/docker-featured-400x200.jpg)
 
 This chapter covers
-■ What Docker is
-■ An introduction to containers
-■ How Docker addresses software problems that most people tolerate
-■ When, where, and why you should use Docker
-■ Example: “Hello, World”
+	- [What is Docker](#whatisdocker)
+	- [An introduction to containers](anintroductiontocontainers)
+	- [How Docker addresses software problems that most people tolerate]()
+	- [When, where, and why you should use Docker]()
+	- [Example: “Hello, World”]()
 
 # What is Docker?
 
@@ -37,4 +37,4 @@ Unlike virtual machines, Docker containers don’t use hardware virtualization. 
 As noted earlier, containers have existed for decades. Docker uses Linux namespaces and cgroups, which have been part of Linux since 2007. Docker doesn’t provide the container technology, but it specifically makes it simpler to use. To understand what containers look like on a system, let’s first establish a baseline. Figure 1.1 shows a basic example running on a simplified computer system architecture.
 Notice that the command-line interface, or CLI, runs in what is called user space memory just like other programs that run on top of the operating system. Ideally,
 
-![](http://prntscr.com/mnz5u2)
+![](https://user-images.githubusercontent.com/10813839/53149713-1489ce00-35e1-11e9-8fd3-62c9c666c740.png)
