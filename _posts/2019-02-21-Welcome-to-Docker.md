@@ -11,11 +11,11 @@ Welcome to Docker
 ![](https://www.maketecheasier.com/assets/uploads/2019/01/docker-featured-400x200.jpg)
 
 This chapter covers
-	- [What is Docker](#what-is-docker)
-	- [An introduction to containers](anintroductiontocontainers)
-	- [How Docker addresses software problems that most people tolerate]()
-	- [When, where, and why you should use Docker]()
-	- [Example: “Hello, World”]()
+- [What is Docker](#what-is-docker)
+- [An introduction to containers](#an-in-troduction-to-containers)
+- [How Docker addresses software problems that most people tolerate](#how-docker-address-software-problems-that-most-people-tolerate)
+- [When, where, and why you should use Docker](#when-where-and-why-you-should-use-docker)
+- [Example: “Hello, World”](#example)
 
 # What is Docker?
 
