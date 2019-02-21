@@ -6,4 +6,4 @@ permalink: /about/
 
 Welcome to this website!
 
-> This website is using [laobubu](http://laobubu.net)'s theme: [EasyBook](https://github.com/laobubu/jekyll-theme-EasyBook)
+> These are records of Tung Pham's DevOps

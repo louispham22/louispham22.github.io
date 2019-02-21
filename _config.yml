@@ -1,20 +1,20 @@
 # Site settings
-title: Tung Pham's Blog
+title: These are records of Tung Pham's DevOps
 url: "https://tunglouis.github.io"    # the protocol and hostname of your site, eg. `https://tunglouis.github.io`
-#timezone: Asia/Chongqing
+#timezone: Asia/Ho_Chi_Minh
 description: >
   One or more sentences introducing this blog.
 
 # Your information
 email: tungpv
 author: Tung Pham
-avatar: "//www.gravatar.com/avatar/your_email_md5?d=mm&s=135"
+avatar: "https://s.gravatar.com/avatar/e6ce8d710a132daf5acfd9d67a133dbf?s=80"
 profile: One sentence introducing yourself.
 #twitter_username: twitter_username
 #github_username:  github_username
 profile_links:
-  Email: "mailto:your_email@example.com"
-  GitHub: "https://github.com/laobubu/jekyll-theme-EasyBook"
+  Email: "mailto:tungpv.it@gmail.com"
+  GitHub: "https://github.com/tunglouis/"
   # You can add more profile links above, or edit _includes/sidebar.html 
 
 # Comment Service (Disqus or 多说)
@@ -28,7 +28,7 @@ header:
   links:             # Links on the header. Link to in-site page with a slash as prefix
     About: /about/
     Category: /category/
-    Donate: https://laobubu.net/donate.html
+    Donate: https://tunglouis.github.io/
 
 permalink: /archivers/:title
 plugins:
