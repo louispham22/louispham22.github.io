@@ -10,7 +10,7 @@ Welcome to Docker
 
 ![](https://www.maketecheasier.com/assets/uploads/2019/01/docker-featured-400x200.jpg)
 
-This chapter covers
+**This chapter covers**
 - [What is Docker](#what-is-docker)
 - [An introduction to containers](#an-in-troduction-to-containers)
 - [How Docker addresses software problems that most people tolerate](#how-docker-address-software-problems-that-most-people-tolerate)
