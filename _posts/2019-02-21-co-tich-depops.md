@@ -2,7 +2,7 @@
 layout: post
 title:  "Sự tích DevOps Tập 1"
 date:   2019-02-21 16:30
-categories: story devops
+categories: storydevops
 permalink: /archivers/su-tich-devops-tap-1
 ---
 
