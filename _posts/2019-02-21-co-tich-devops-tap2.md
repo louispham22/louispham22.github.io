@@ -3,7 +3,7 @@ layout: post
 title:  "Sự tích DevOps"
 date:   2019-02-21 18:30
 categories: story devops
-permalink: /archivers/su-tich-devops
+permalink: /archivers/su-tich-devops-tap-2
 ---
 
 **Sự tích DevOps tập 2**
