@@ -2,11 +2,11 @@
 layout: post
 title:  "Sự tích DevOps"
 date:   2019-02-21 16:30
-categories: story
+categories: story devops
 permalink: /archivers/su-tich-devops
 ---
 
-**Sự tích DevOps**
+**Sự tích DevOps tập 1**
 
 Ngày xửa ngày xưa, ở thung lũng độn silicon valley, có 2 anh em cùng cha khác bố. Người anh tên là Developer, làm ngồi coding. Người em tên là IT Operation, làm nghề quản trị hệ thống CNTT. Cả 2 anh em đều phục vụ 1 cô bé tên là QA.
 Nàng QA đẹp lắm, tóc nàng dài như dòng suối mơ, tóc đen như gỗ mun, da trắng như bạch tuyết. Hàng ngày, nàng sử dụng những application do anh Developer tạo ra, được deploy và vận hành bởi chàng IT operation.
