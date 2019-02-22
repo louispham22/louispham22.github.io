@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Docker Compose"
+date:   2019-02-14 9:30
 categories: docker
 permalink: /archivers/docker-compose
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "What is Docker Swarm - Swarm Mode"
-date:   2019-02-22 15:30
+date:   2019-02-16 15:30
 categories: docker
 permalink: /archivers/what-is-docker-swarm
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Create Docker Swarm"
-date:   2019-02-22 16:30
+date:   2019-02-17 16:30
 categories: docker
 permalink: /archivers/create-docker-swarm
 ---
