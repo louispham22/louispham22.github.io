@@ -6,117 +6,199 @@ categories: docker
 permalink: /archivers/welcome-to-docker
 ---
 
-Welcome to Docker
+# 1. Giới thiệu về Docker
 
-![](https://www.maketecheasier.com/assets/uploads/2019/01/docker-featured-400x200.jpg)
+____
 
-**This chapter covers**
-- [What is Docker](#what-is-docker)
-- [An introduction to containers](#an-in-troduction-to-containers)
-- [How Docker addresses software problems that most people tolerate](#how-docker-address-software-problems-that-most-people-tolerate)
-- [When, where, and why you should use Docker](#when-where-and-why-you-should-use-docker)
-- [Example: “Hello, World”](#example)
+# Mục lục
 
-# 1. What is Docker?
 
-Docker is a command-line program, a background daemon, and a set of remote services that take a logistical approach to solving common software problems and simpli- fying your experience installing, running, publishing, and removing software. It accomplishes this using a UNIX technology called containers.
+- [1.1 Docker là gì?](#whatis)
+- [1.2 Chức năng, vai trò của Docker?](#about)
+- [1.3 Các khái niệm cần biết khi sử dụng docker](#concepts)
+    - [1.3.1 Image](#image)
+    - [1.3.2 Registry](#registry)
+    - [1.3.3 Volume](#volume)
+    - [1.3.4 Container](#container)
+    - [1.3.5 Dockerfile](#docker-file)
+- [1.4 Các thành phần, kiến trúc trong Docker](#compose)
+- [1.5 Các trạng thái, thứ tự chuyển giao trạng thái của container trong Docker](#workflow)
+- [1.6 Network trong Docker](#network)
+- [1.7 Volume trong Docker](#volume)
+- [Các nội dung khác](#content-others)
 
-## 1.1 Containers
+____
 
-Using containers has been a best practice for a long time. But manually building containers can be challenging and easy to do incorrectly. This challenge has put them out of reach for some, and misconfigured containers have lulled others into a false sense of security. We need a solution to this problem, and Docker helps. Any software run with Docker is run inside a container. Docker uses existing container engines to provide consistent containers built according to best practices. This puts stronger security within reach for everyone.
+# <a name="content">Nội dung</a>
 
-With Docker, users get containers at a much lower cost. As Docker and its container engines improve, you get the latest and greatest jail features. Instead of keeping up with the rapidly evolving and highly technical world of building strong application jails, you can let Docker handle the bulk of that for you. This will save you a lot of time and money and bring peace of mind.
+- ### <a name="whatis">1.1 Docker là gì?</a>
 
-## 1.2 Containers are not virtualization
+    - Docker là một ứng dụng mã nguồn mở cho phép độc lập triển khai giữa các ứng dụng và cơ sở hạ tầng đối với các nhà phát triển và mở ra tiềm năng tạo nên một mô hình cho sự hợp tác tốt và đổi mới hơn.
 
-Unlike virtual machines, Docker containers don’t use hardware virtualization. Programs running inside Docker containers interface directly with the host’s Linux kernel. Because there’s no additional layer between the program running inside the container and the computer’s operating system, no resources are wasted by running redundant software or simulating virtual hardware. This is an important distinction. Docker is not a virtualization technology. Instead, it helps you use the container technology already built into your operating system.
+    - Docker giải quyết vấn đề khi mà các doanh nghiệp ngày nay đang chịu áp lực phải chuyển đổi kỹ thuật số nhưng bị hạn chế bởi các ứng dụng và cơ sở hạ tầng hiện tại đồng thời hợp lý hóa danh mục cloud, trung tâm dữ liệu và kiến trúc ứng dụng ngày càng đa dạng.
 
-## 1.3 Running software in containers for isolation
+- ### <a name="about">1.2 Chức năng, vai trò của Docker?</a>
 
-As noted earlier, containers have existed for decades. Docker uses Linux namespaces and cgroups, which have been part of Linux since 2007. Docker doesn’t provide the container technology, but it specifically makes it simpler to use. To understand what containers look like on a system, let’s first establish a baseline. Figure 1.1 shows a basic example running on a simplified computer system architecture.
-Notice that the command-line interface, or CLI, runs in what is called user space memory just like other programs that run on top of the operating system. Ideally,
+    - Cho phép phát triển, di chuyển và chạy các ứng dụng dựa vào công nghệ ảo hóa container trong Linux.
 
-![](https://user-images.githubusercontent.com/10813839/53149713-1489ce00-35e1-11e9-8fd3-62c9c666c740.png)
+    - Tự động triển khai các ứng dụng bên trong các container bằng cách cung cấp thêm một lớp trừu tượng và tự động hóa việc ảo hóa "mức hệ điều hành".
 
-![](https://user-images.githubusercontent.com/10813839/53151652-5406e900-35e6-11e9-88b9-7ab124fd0a04.png)
+    - Docker có thể sử dụng được trên cả 3 hệ điều hành phổ biến: Windows, Linux và Mac OS.
 
-programs running in user space can’t modify kernel space memory. Broadly speaking, the operating system is the interface between all user programs and the hardware that the computer is running on.
-You can see in figure 1.2 that running Docker means running two programs in user space. The first is the Docker daemon. If installed properly, this process should always be running. The second is the Docker CLI. This is the Docker program that users interact with. If you want to start, stop, or install software, you’ll issue a com- mand using the Docker program.
+    - Lợi ích của docker bao gồm:
 
-Figure 1.2 also shows three running containers. Each is running as a child process of the Docker daemon, wrapped with a container, and the delegate process is running in its own memory subspace of the user space. Programs running inside a container can access only their own memory and resources as scoped by the container.
-The containers that Docker builds are isolated with respect to eight aspects. Part 1 of this book covers each of these aspects through an exploration of Docker container features. The specific aspects are as follows:
+        + Nhanh trong việc triển khai, di chuyển, khởi động container
+        + Bảo mật
+        + Lightweight (tiết kiệm disk & CPU)
+        + Mã nguồn mở
+        + Hỗ trợ APIs để giao tiếp với container
+        + Phù hợp trong môi trường làm việc đòi hòi phải liên tục tích hợp và triển khai các dịch vụ, phát triển cục bộ, các ứng dụng multi-tier.
 
-- **PID** namespace—Process identifiers and capabilities
-- **UTS** namespace—Host and domain name
-- **MNT** namespace—File system access and structure
-- **IPC** namespace—Process communication over shared memory
-- **NET** namespace—Network access and structure
-- **USR** namespace—User names and identifiers
-- **chroot()—Controls** the location of the file system root
-- **cgroups—Resource** protection
+- ### <a name="concepts">1.3 Các khái niệm cần biết khi sử dụng docker</a>
+    - ### <a name="image">1.3.1 Image</a>
 
-Linux namespaces and cgroups take care of containers at runtime. Docker uses another set of technologies to provide containers for files that act like shipping containers.
+        + Image trong Docker hay còn gọi là Mirror. Là một template có sẵn (hoặc có thể tự tạo) với các chỉ dẫn dùng để tạo ra các container. 
 
-## 1.4 Shipping containers
+        + Được xây dựng từ một loạt các layers. Mỗi layer là một kết quả đại diện cho một lệnh trong Dockerfile.
 
-Docker provides a set of infrastructure components that simplify distributing Docker images. These components are registries and indexes. You can use publicly avail- able infrastructure provided by Docker Inc., other hosting companies, or your own registries and indexes.
+        + Lưu trữ dưới dạng read-only template.
 
-# 2. What problems does Docker solve?
+    - ### <a name="registry">1.3.2 Registry</a>
 
-Using software is complex. Before installation you have to consider what operating system you’re using, the resources the software requires, what other software is already installed, and what other software it depends on. You need to decide where it should be installed. Then you need to know how to install it. It’s surprising how drastically installation processes vary today. The list of considerations is long and unforgiving. Installing software is at best inconsistent and overcomplicated.
+        + Docker Registry là nơi lưu trữ các image với hai chế độ là private và public.
 
-Most computers have more than one application installed and running. And most applications have dependencies on other software. What happens when two or more applications you want to use don’t play well together? Disaster. Things are only made more complicated when two or more applications share dependencies:
+        + Là nơi cho phép chia sẻ các image template để sử dụng trong quá trình làm việc với Docker.
 
-- What happens if one application needs an upgraded dependency but the other does not?
-- What happens when you remove an application? Is it really gone?
-- Can you remove old dependencies?
-- Can you remember all the changes you had to make to install the software you now want to remove?
+    - ### <a name="volume">1.3.3 Volume</a>
 
-The simple truth is that the more software you use, the more difficult it is to manage. Even if you can spend the time and energy required to figure out installing and running applications, how confident can you be about your security? Open and closed source programs release security updates continually, and being aware of all of the issues is often impossible. The more software you run, the greater the risk that it’s vulnerable to attack.
+        + Volume trong Docker là nơi dùng để chia sẻ dữ liệu cho các container.
 
-All of these issues can be solved with careful accounting, management of resources, and logistics, but those are mundane and unpleasant things to deal with. Your time would be better spent using the software that you’re trying to install, upgrade, or publish. The people who built Docker recognized that, and thanks to their hard work you can breeze through the solutions with minimal effort in almost no time at all.
+        + Có thể thực hiện sử dụng Volume đối với 2 trường hợp:
 
-It’s possible that most of these issues seem acceptable today. Maybe they feel trivial because you’re used to them. After reading how Docker makes these issues approachable, you may notice a shift in your opinion
+            - Chia sẻ giữa container với container.
+            - Chia sẻ giữa container và host.
 
-# 3. Why is Docker important?
+    - ### <a name="container">1.3.4 Container</a>
 
-This is also the case for application removal. When you want to remove software, you simply tell Docker which software to remove. No lingering artifacts will remain because they were all carefully contained and accounted for. Your computer will be as clean as it was before you installed the software.
+        + Docker Container là một thể hiện của Docker Image với những thao tác cơ bản để sử dụng qua CLI như start, stop, restart hay delete, ...
 
-The container abstraction and the tools Docker provides for working with containers will change the system administration and software development landscape. Docker is important because it makes containers available to everyone. Using it saves time, money, and energy.
+        + Container Image là một gói phần mềm thực thi lightweight, độc lập và có thể thực thi được bao gồm mọi thứ cần thiết để chạy được nó: code, runtime, system tools, system libraries, settings. Các ứng dụng có sẵn cho cả Linux và Windows, các container sẽ luôn chạy ổn định bất kể môi trường.
 
-The second reason Docker is important is that there is significant push in the software community to adopt containers and Docker. This push is so strong that companies like Amazon, Microsoft, and Google have all worked together to contribute to its development and adopt it in their own cloud offerings. These companies, which are typically at odds, have come together to support an open source project instead of developing and releasing their own solutions.
+            > ![docker-container-images](../../images/docker-container-images.png)
 
-The third reason Docker is important is that it has accomplished for the computer what app stores did for mobile devices. It has made software installation, compartmen talization, and removal very simple. Better yet, Docker does it in a cross-platform and open way. Imagine if all of the major smartphones shared the same app store. That would be a pretty big deal. It’s possible with this technology in place that the lines between operating systems may finally start to blur, and third-party offerings will be less of a factor in choosing an operating system.
+        + Containers and virtual machines có sự cách ly và phân bổ tài nguyên tương tự, nhưng có chức năng khác vì các container ảo hóa hệ điều hành thay vì phần cứng. Các container có tính portable và hiệu quả hơn.
 
-Fourth, we’re finally starting to see better adoption of some of the more advanced isolation features of operating systems. This may seem minor, but quite a few people are trying to make computers more secure through isolation at the operating system level. It’s been a shame that their hard work has taken so long to see mass adoption. Containers have existed for decades in one form or another. It’s great that Docker helps us take advantage of those features without all the complexity.
+            > ![docker-container-vms](../../images/docker-container-vms.png)
 
-# 4. Where and when to use Docker
+            - Container là một sự trừu tượng hóa ở lớp ứng dụng và code phụ thuộc vào nhau. Nhiều container có thể chạy trên cùng một máy và chia sẻ kernel của hệ điều hành với các container khác, mỗi máy đều chạy như các quá trình bị cô lập trong không gian người dùng. Các container chiếm ít không gian hơn các máy ảo (container image thường có vài trăm thậm chí là vài MB), và start gần như ngay lập tức.
 
-Docker can run almost anywhere, but that doesn’t mean you’ll want to do so. For example, currently Docker can only run applications that can run on a Linux operating system. This means that if you want to run an OS X or Windows native application, you can’t yet do so through Docker.
+            - Máy ảo (VM) là một sự trừu tượng của phần cứng vật lý chuyển tiếp từ một máy chủ sang nhiều máy chủ. Hypervisor cho phép nhiều máy ảo chạy trên một máy duy nhất. Mỗi máy ảo bao gồm một bản sao đầy đủ của một hệ điều hành, một hoặc nhiều ứng dụng, các chương trình và thư viện cần thiết - chiếm hàng chục GB. Máy ảo cũng có thể khởi động chậm.
 
-# 5. Example: “Hello, World”
+    - ### <a name="docker-file">1.3.5 Dockerfile</a>
 
-I like to get people started with an example. In keeping with tradition, we’ll use “Hello, World.” Before you begin, download and install Docker for your system. 
-Detailed instructions are kept up-to-date for every available system at https://docs.docker.com/ installation/. 
-OS X and Windows users will install the full Docker suite of applications using the Docker Toolbox. Once you have Docker installed and an active internet con- nection, head to your command prompt and type the following:
+        - Docker Image có thể được tạo ra một cách tự động bằng việc đọc các chỉ dẫn trong Dockerfile.
 
-`docker run dockerinaction/hello_world`
+        - Dockerfile là một dữ liệu văn bản bao gồm các câu lệnh mà người sử dụng có thể gọi qua các dòng lệnh để tạo ra một image.
 
-After you do so, Docker will spring to life. It will start downloading various compo- nents and eventually print out “hello world.” If you run it again, it will just print out “hello world.” Several things are happening in this example, and the command itself has a few distinct parts.
+        - Bằng việc sử dụng `docker build` người dùng có thể tạo một tự động xây dựng thực hiện một số lệnh dòng lệnh liên tiếp.
 
-![](https://user-images.githubusercontent.com/10813839/53154192-cbd81200-35ec-11e9-811d-28da1e7aaf9f.png)
+- ### <a name="compose">1.4 Các thành phần, kiến trúc trong Docker</a>
 
-First, you use the docker run command to start a new container. This single com- mand triggers a sequence (shown in figure 1.6) that installs, runs, and stops a pro- gram inside a container.
-Second, the program that you tell it to run in a container is dockerinaction/ hello_world. This is called the repository (or image) name. For now, you can think of the repository name as the name of the program you want to install or run.
+    > ![engine-components-flow.png](../../images/docker-engine-components-flow.png)
 
-# 6. Summary
+    - Hình ảnh bên trên là mô tả về `Docker Engine`. Theo đó, `Docker Engine` là một ứng dụng client-server với các thành phần chính:
 
-This chapter has been a brief introduction to Docker and the problems it helps system administrators, developers, and other software users solve. In this chapter you learned that:
-- Docker takes a logistical approach to solving common software problems and simplifies your experience with installing, running, publishing, and removing software. It’s a command-line program, a background daemon, and a set of remote services. It’s integrated with community tools provided by Docker Inc.
-- The container abstraction is at the core of its logistical approach.
-- Working with containers instead of software creates a consistent interface and enables the development of more sophisticated tools.
-- Containers help keep your computers tidy because software inside containers
-can’t interact with anything outside those containers, and no shared dependencies can be formed.
-- Because Docker is available and supported on Linux, OS X, and Windows, most software packaged in Docker images can be used on any computer.
-- Docker doesn’t provide container technology; it hides the complexity of working directly with the container software.
+        + Một máy chủ đảm nhiệm thực hiện quá trình daemon (chạy câu lệnh `dockerd`).
+        + REST API xác định các giao diện mà các chương trình có thể sử dụng để nói chuyện với daemon và hướng dẫn nó phải làm gì.
+        + Một CLI (chạy câu lệnh `docker`).
 
+    - CLI sẽ sử dụng Docker REST API để kiểm soát hoặc tương tác với Docker daemon thông qua kịch bản hoặc lệnh CLI trực tiếp.
+
+        > ![architecture.png](../../images/docker-architecture.png)
+
+    - Docker sử dụng kiến trúc client-server. Docker client sẽ giao tiếp với Docker daemon các công việc building, running và distributing các Docker Container.
+
+    - Docker client và Docker daemon có thể chạy cùng trên một hệ thống hoặc ta có thể kết nối một Docker client tới một remote Docker daemon. Docker client và Docker daemon liên lạc với nhau bằng việc sử dụng REST API thông qua UNIX sockets hoặc network interfaces.
+
+    - Docker daemon (dockerd ) sẽ lắng nghe các request từ Docker API và quản lý Docker objects bao gồm images, containers, networks và volumes. Một daemon cũng có thể liên lạc với các daemons khác để quản lý Docker services.
+
+    - Docker client (docker ) là con đường chính để những người sử dụng Docker tương tác và giao tiếp với Docker. Khi sử dụng mộ câu lệnh chẳng hạn như `docker run` thì client sẽ gửi câu lệnh tới dockerd để thực hiện câu lệnh. Các câu lệnh từ Docker client sử dụng Docker API và có thể giao tiếp với nhiều Docker daemon.
+
+- ### <a name="workflow">1.5 Các trạng thái, sự chuyển giao trạng thái của container trong Docker</a>
+
+    Hình ảnh dưới đây mô tả cho một vòng đời của container trong Docker cùng với các trạng thái hoạt động:
+
+    > ![docker-state](../../images/docker-state.png)
+
+- ### <a name="network">1.6 Network trong Docker</a>
+
+    Dưới đây là hình ảnh mô tả kiến trúc Network của Container hay còn gọi là Container Networking Model (CNM).
+
+    > ![docker-network-models](../../images/docker-network-models.png)
+
+    Đây là cấu trúc mức độ cao trong CNM. Theo đó, ta có:
+
+    + Sandbox - Chứa các cấu hình của ngăn xếp mạng container. Bao gồm quản lý network interface, route table và các thiết lập DNS. Một Sandbox có thể được coi là một namespace network và có thể chứa nhiều endpoit từ nhiều mạng.
+
+    + Endpoint - Là điểm kết nối một Sandbox tới một mạng.
+
+    + Network - CNM không chỉ định một mạng tuân theo mô hình OSI. Việc triển khai mạng có thể là VLAN, Bridge, ... Các endpoint không kết nối với mạng thì không có kết nối trên mạng.
+
+    - CNM cung cấp 2 interface có thể được sử dụng cho việc liên lạc, điều khiển, ... container trong mạng:
+
+        - `Network Drivers` - Cung cấp, thực hiện thực tế việc tạo ra một mạng hoạt động. Được sử dụng với các drivers khác và thay đổi một cách dễ dàng đối với các trường hợp cụ thể. Nhiều network driver có thể được sử dụng trong Docker nhưng mỗi một network chỉ là một khởi tạo từ một network driver duy nhất. Theo đó mà ta có 2 loại chính của CNM network drivers như sau:
+
+            + `Native Network Drivers` - Là một phần của Docker Engine và được cung cấp bới Docker. Có nhiều drivers để dễ dàng lựa chọn cho khả năng của mạng như overlay networks hay local bridges.
+
+            + `Remote Network Drivers` - Là các network drivers được tạo ra bởi cộng đồng và các nhà cung cấp. Được sử dụng để tích hợp vào các phần mềm hoặc phần cứng đang hoạt động.
+
+        - `IPAM Drivers`: Drivers quản lý các địa chỉ IP cung cấp mặc định cho các mạng con hoặc địa chỉ IP cho các mạng và endpoint nếu chúng không được chỉ định. Địa chỉ IP cũng có thể gán thủ công qua mạng, container, ...
+
+    - Giao tiếp giữa docker engine - libnetwork - driver
+
+        > ![docker-ipam-network](../../images/docker-ipam-network.png)
+
+    - `Docker Native Network Drivers` - là một phần của Docker Engine và không yêu cầu cần phải có nhiều modules. Được gọi và sử dụng thông qua các câu lệnh `docker network`. Dưới đây là native network hiện có:
+
+        | Driver | Mô tả |
+        | ------------- | ------------- |
+        | Host | Với host driver, một container sẽ sử dụng ngăn xếp mạng của host. Không có sự phân biệt giữa namespace, tất cả các interface trên host có thể được sử dụng trực tiếp bởi container |
+        | Bridge | Bridge driver tạo ra Linux bridges trên host và được quản lý bởi Docker. Mặc định, containers trên một bridge có thể liên lạc với nhau. Việc truy cập từ bên ngoài tới các container có thể được cấu hình thông qua bridge driver.  |
+        | Overlay | Overlay driver tạo ra một overlay network hỗ trợ cho các mạng multi-host. Được sử dụng kết hợp với Linux bridges và VXLAN để che đi liên lạc giữa các container qua cơ sở mạng hạ tầng vật lý. |
+        | MACVLAN | MACVLAN driver sử dụng chế độ MACVLAN bridge để thiết lập kết nối giữa container interface và host interface (hoặc sub-interface). Nó có thể được sử dụng để cung cấp địa chỉ IP cho các container và định tuyến trên mạng vật lý. Ngoài ra VLANs có thể được trunked đến MACVLAN driver |
+        | None | None driver cho một ngăn xếp mạng riêng và namespace nhưng không cấu hình interfaces bên trong container. Nếu không có cấu hình bổ sung, container hoàn toàn bị cô lập khỏi mạng của host |
+
+    - Đối với native driver network trong container. Ta có:
+
+        + Chiều outbound khi các container sử dụng trong container 
+
+            > ![docker-native-network-out.png](../../images/docker-native-network-out.png)
+
+        + Chiều inbound khi các container sử dụng trong container 
+
+            > ![docker-native-network-in.png](../../images/docker-native-network-in.png)
+
+        + Container kết nối với network thông quan docker0 interface:
+
+            > ![docker-native-network-inhost](../../images/docker-native-network-inhost.png)
+    
+
+- ### <a name="volume">1.7 Volume trong Docker</a>
+
+    + Volume là một thư mục đặc biệt được chỉ định trong một hoặc nhiều container.
+
+    + Volumes được thiết kế để duy trì dữ liệu, độc lập với vòng đời của container.
+
+    + Do đó, Docker sẽ không bao giờ tự động xóa volumes khi ta xóa bỏ containers. Còn được biết đến là `data volume`.
+
+    - Có 3 kiểu volume đó là: host, anonymous, named:
+
+        + `host volume` - tồn tại trên filesystem của Docker host và có thể được truy cập từ bên trong container.
+
+        + `named volume`- là volume được Docker quản lý và được đặt tên.
+
+        + `anonymous volume`- tương tự như `named volume`. Tuy nhiên rất khó để có thể tham vấn tới cùng một volume theo thời gian khi volume là một đối tượng vô danh. Lưu trữ các tập tin mà Docker xử lý.
+
+____
+
+# <a name="content-others">Các nội dung khác</a>
