@@ -10,10 +10,7 @@ permalink: /archivers/backup-and-recovery-docker-containers
 
 # Backup và Recovery Docker Containers
 
-____
-
 # Mục lục
-
 
 - [1. Docker containers backup](#backup)
 - [2. Docker containers recovery](#recovery)

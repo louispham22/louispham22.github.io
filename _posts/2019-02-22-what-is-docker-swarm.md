@@ -10,8 +10,6 @@ permalink: /archivers/what-is-docker-swarm
 
 # 5. Giới thiệu về Docker Swarm - Swarm Mode.
 
-____
-
 # Mục lục
 
 

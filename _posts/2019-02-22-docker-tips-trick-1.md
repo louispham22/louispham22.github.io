@@ -10,9 +10,6 @@ permalink: /archivers/docker-tips-trick-1
 
 # 1. Docker Containers là một tiến trình cô lập, không phải máy ảo.
 
-____
-____
-
 # <a name="content">Nội dung</a>
 
 ![https://nickjanetakis.com/assets/blog/cards/docker-tips-and-tricks-56b5452dc709c8861641d9011d55ed5e6f5138b7d1e76a5e258160077c903076.jpg](https://nickjanetakis.com/assets/blog/cards/docker-tips-and-tricks-56b5452dc709c8861641d9011d55ed5e6f5138b7d1e76a5e258160077c903076.jpg)

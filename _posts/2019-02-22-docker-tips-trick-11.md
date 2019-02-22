@@ -10,9 +10,6 @@ permalink: /archivers/docker-tips-trick-11
 
 # 11. Mở và đóng port ra bên ngoài trong Docker
 
-____
-____
-
 ![https://nickjanetakis.com/assets/blog/cards/docker-tips-and-tricks-56b5452dc709c8861641d9011d55ed5e6f5138b7d1e76a5e258160077c903076.jpg](https://nickjanetakis.com/assets/blog/cards/docker-tips-and-tricks-56b5452dc709c8861641d9011d55ed5e6f5138b7d1e76a5e258160077c903076.jpg)
 
 - Bạn có biết Docker hoạt động như một tường lửa cho các dịch vụ Dockerized của bạn? Bạn có thể kích hoạt hoặc vô hiệu hóa các dịch vụ của bạn bằng cách lắng nghe trên một cổng.

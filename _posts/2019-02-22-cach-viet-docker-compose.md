@@ -10,8 +10,6 @@ permalink: /archivers/cach-viet-docker-compose
 
 # Cách viết Docker Compose file.
 
-____
-
 # Mục lục
 
 

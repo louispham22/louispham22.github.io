@@ -10,8 +10,6 @@ permalink: /archivers/docker-tips-trick-12
 
 # 12. Sự khác nhau giữa RUN và CMD trong Dockerfile
 
-____
-
 # Mục lục
 
 

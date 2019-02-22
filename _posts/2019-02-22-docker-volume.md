@@ -10,8 +10,6 @@ permalink: /archivers/docker-volume
 
 # 3. Quản lý dữ liệu trong Docker
 
-____
-
 # Mục lục
 
 

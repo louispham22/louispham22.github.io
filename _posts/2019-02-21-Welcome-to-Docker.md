@@ -8,8 +8,6 @@ permalink: /archivers/welcome-to-docker
 
 # 1. Giới thiệu về Docker
 
-____
-
 # Mục lục
 
 

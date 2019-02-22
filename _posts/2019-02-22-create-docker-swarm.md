@@ -10,10 +10,7 @@ permalink: /archivers/create-docker-swarm
 
 # 6. Tạo và quản lý cluster swarm trong Docker
 
-____
-
 # Mục lục
-
 
 - [6.1 Các yêu cầu cần có để thực hiện](#requirement)
 - [6.2 Tạo ra Swarm Docker](#swarm-init)

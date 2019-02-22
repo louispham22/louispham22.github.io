@@ -10,10 +10,7 @@ permalink: /archivers/docker-commandline
 
 # 2. Các câu lệnh được dùng phổ biến khi sử dụng Docker
 
-____
-
 # Mục lục
-
 
 - [2.1 Nhóm lệnh thao tác với container](#docker-container)
 - [2.2 Nhóm lệnh điều khiển container](#docker-control)
