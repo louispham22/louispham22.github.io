@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Sự tích DevOps Tập 2"
-date:   2019-02-21 18:30
 categories: story
 permalink: /archivers/su-tich-devops-tap-2
 ---

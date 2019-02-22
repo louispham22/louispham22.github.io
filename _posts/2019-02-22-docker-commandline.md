@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Docker Commandline"
-date:   2019-02-22 13:30
 categories: docker
 permalink: /archivers/docker-commandline
 ---
