@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Running software in containers"
+date:   2019-02-13 15:30
 categories: docker
 permalink: /archivers/running-sotfware-in-containers
 ---

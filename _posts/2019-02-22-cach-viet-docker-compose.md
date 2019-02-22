@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Cách viết Docker Compose"
+date:   2019-02-22 10:30
 categories: docker
 permalink: /archivers/cach-viet-docker-compose
 ---
