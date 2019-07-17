@@ -6,7 +6,7 @@ categories: Share
 permalink: /archivers/làm-người-khó-nhất-là-thấu-hiểu-chính-mình
 ---
 
-![who-am-i](../../images/4.png)
+![who](../../images/4.png)
 
 **Làm người khó nhất là thấu hiểu chính mình.**
 
