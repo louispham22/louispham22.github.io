@@ -6,9 +6,10 @@ categories: Share
 permalink: /archivers/đừng-than-trách-số-phận-bất-công-cuộc-đời-tốt-hay-không
 ---
 
+![Control](../../images/1.png)
+
 **Đừng than trách số phận bất công, cuộc đời tốt hay không là do chính bạn.**
 
-![Control](../../images/1.png)
 
 Có người thường xuyên than vãn số phận của mình sao thật bất công, nhưng không bao giờ xem lại chính mình, vận mệnh có tốt hay không hãy xem ở đức hạnh.
 

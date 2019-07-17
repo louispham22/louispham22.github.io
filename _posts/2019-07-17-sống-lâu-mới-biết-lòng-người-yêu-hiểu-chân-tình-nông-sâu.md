@@ -6,9 +6,10 @@ categories: Share
 permalink: /archivers/sống-lâu-mới-biết-lòng-người-yêu-hiểu-chân-tình-nông-sâu
 ---
 
+![Best-Friend](../../images/2.png)
+
 **Sống lâu mới biết lòng người, yêu lâu mới hiểu chân tình, nông sâu.**
 
-![Best-Friend](../../images/2.png)
 
 Muốn biết một người có đáng tin hay không, đừng xem họ nói những gì, mà cần xem họ làm được những gì; muốn kết giao một người thì đừng xem họ có những gì, mà chỉ cần xem họ cho đi những thứ gì.
 
