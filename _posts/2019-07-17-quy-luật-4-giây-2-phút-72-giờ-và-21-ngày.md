@@ -1,14 +1,15 @@
 ---
 layout: post
 title:  "QUY LUẬT: 4 giây - 2 phút - 72 giờ và 21 ngày"
-date:   2019-07-17 16:30
+date:   2019-07-16 10:30
 categories: Share
 permalink: /archivers/quy-luật-4-giây-2-phút-72-giờ-và-21-ngày
 ---
 
+![Quy luật](../../images/0.png)
+
 **QUY LUẬT: "4 giây - 2 phút - 72 giờ và 21 ngày"​**
 
-![Quy luật](../../images/0.png)
 
 Công thức kì diệu giúp bạn đạt mọi mục tiêu và không bao giờ bị trì hoãn.
 
