@@ -6,6 +6,8 @@ categories: docker
 permalink: /archivers/how-to-delete-docker-images-containers-and-volumes
 ---
 
+![delete-docker-images](../../images/featured.jpg)
+
 **Cách để xóa Docker Images, Containers, và Volumes**
 
 # Xóa tất cả hình ảnh chưa sử dụng hoặc thừa, Containers, Volumes và Networks
