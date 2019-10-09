@@ -6,6 +6,8 @@ categories: AWS-training
 permalink: /archivers/aws-certified-solution-architect-professional
 ---
 
+![AWS-SSA-Professional](../../images/Solutions-Architect-Professional-1.png)
+
 **AWS Certified Solution Architect – Professional (SAP-C01) Exam Learning Path**
 
 AWS Certified Solutions Architect - Professional (SAP-C01) exam is the upgraded pattern of the previous Solution Architect - Professional exam which was released last year (2018) and upgraded this year.
