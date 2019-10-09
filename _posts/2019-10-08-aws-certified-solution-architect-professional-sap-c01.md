@@ -40,7 +40,7 @@ Be sure to cover the following topics:
   * [Building Fault-Tolerant Application on AWS](https://tunglouis.github.io)
 
 **Migration & Transfer**
-  * Understand **[Cloud Migration Services]**(https://tunglouis.github.io)
+  * Understand [Cloud Migration Services](https://tunglouis.github.io)
   * Know Server Migration Service
   * Know Database Migration Service (Hint: `Elasticsearch is supported by DMS`)
   *  Know Snowball vs Snowball Edge vs SnowMobile
