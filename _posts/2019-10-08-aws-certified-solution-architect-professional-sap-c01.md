@@ -33,10 +33,10 @@ AWS Certified Solutions Architect – Professional (SAP-C01) Exam Summary
 Be sure to cover the following topics:
 
 **Whitepapers are the key to understand**
-  * `[Overview of Security Processes]`(https://tunglouis.github.io)
-  * `[Disaster Recovery]`(https://tunglouis.github.io) *(Hint: make sure you understand the difference between each types esp. pilot light, warm standby w.r.t RTO and RPO)*
-  * `[Cloud migration]`(https://tunglouis.github.io) *(Hint: make sure you understand the difference between rehost, replatform, rearchitect)*
-  * `[Architecting for the Cloud: Best Practices]`(https://tunglouis.github.io)
+  * `[Overview of Security Processes](https://tunglouis.github.io)`
+  * `[Disaster Recovery](https://tunglouis.github.io)` *(Hint: make sure you understand the difference between each types esp. pilot light, warm standby w.r.t RTO and RPO)*
+  * `[Cloud migration](https://tunglouis.github.io)` *(Hint: make sure you understand the difference between rehost, replatform, rearchitect)*
+  * `[Architecting for the Cloud: Best Practices](https://tunglouis.github.io)`
   * `[Building Fault-Tolerant Application on AWS]`(https://tunglouis.github.io)
 
 **Migration & Transfer**
