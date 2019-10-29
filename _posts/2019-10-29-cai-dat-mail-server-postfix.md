@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Xây dựng Mail server Postfix"
-date:   2019-29-10 15:00
+date:   2019-10-22 16:10
 categories: tips-trick
 permalink: /archivers/xay-dung-mail-server-marketing
 ---
