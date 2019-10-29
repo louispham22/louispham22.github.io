@@ -6,6 +6,8 @@ categories: tips-trick
 permalink: /archivers/xay-dung-mail-server-marketing
 ---
 
+![dkim-New-bg](../../images/dkim_New_bg.jpg)
+
 **Xây dựng Mail server Postfix**
 
 Trong thời gian làm việc ở Nhật, mình có tham gia dự án triển khai hệ thống Mail server cho công ty khách hàng.
