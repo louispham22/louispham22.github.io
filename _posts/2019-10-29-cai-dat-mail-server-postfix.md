@@ -13,7 +13,7 @@ permalink: /archivers/xay-dung-mail-server-marketing
 Trong thời gian làm việc ở Nhật, mình có tham gia dự án triển khai hệ thống Mail server cho công ty khách hàng.
 Từ đây mình mới tìm hiểu, thiết kế và triển khai. Qua quá trình này mình muốn chia sẻ lại những thông tin thực tế mà mình hiểu được khi triển khai.
 
-** Chuẩn bị**
+**Chuẩn bị**
 
 	- EC2
 	- Elastic IP trust (Need request with AWS following: https://aws.amazon.com/forms/ec2-email-limit-rdns-request?catalog=true&isauthcode=true)
@@ -274,7 +274,6 @@ Thay đổi lại các chỉ số sau:
 
 Tất cả quá trình cài đặt postfix và dkim bạn có thể sử dụng scripts sau để thực hiện:
 
-	```
 	#!/bin/bash
 
 
@@ -373,7 +372,6 @@ Tất cả quá trình cài đặt postfix và dkim bạn có thể sử dụng 
 	postconf -e milter_default_action = accept
 	postconf -e smtpd_milters = inet:localhost:8891
 	postconf -e non_smtpd_milters = inet:localhost:8891
-	```
 
 
 Chúc bạn thành công!
