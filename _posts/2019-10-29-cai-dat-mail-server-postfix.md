@@ -36,9 +36,9 @@ Từ đây mình mới tìm hiểu, thiết kế và triển khai. Qua quá trì
 ** Thực hiện **
 - Cài đặt Postfix
 
-	`
+	```
 	sudo yum install -y postfix
-	`
+	```
 
 - Cài đặt Opendkim (Do dùng phiên bản Amazon linux AMI 2013 đã cũ nên cần cài Opendkim từ EPEL)
 
@@ -51,21 +51,21 @@ Từ đây mình mới tìm hiểu, thiết kế và triển khai. Qua quá trì
 
 - Tạo thư mục chứa key của dkim
 
-	`
+	```
 	sudo mkdir /etc/opendkim/keys/{domain}
-	`
+	```
 
 - Tạo cặp khóa (Public/Private) trong folder mới tạo
 
-	`
+	```
 	sudo opendkim-genkey -D /etc/opendkim/keys/{domain} -d {domain} -s {keyname}
-	`
+	```
 
 - Thay đổi chủ sở hữu của folder chứa key thành `opendkim`
 
-	`
+	```
 	sudo chown -R opendkim:opendkim /etc/opendkim/keys/{domain}
-	`
+	```
 
 - Cấu hình Opendkim
 		
@@ -118,6 +118,7 @@ Từ đây mình mới tìm hiểu, thiết kế và triển khai. Qua quá trì
 
 *Note*: Nếu bạn muốn gửi thư từ bên thứ 3 thông qua domain của bạn, thì thêm domain của bên thứ vào file SigningTable như sau:
 
+	```
 	vim /etc/opendkim/SigningTable
 	# WILDCARD EXAMPLE
 	# Enables signing for any address on the listed domain(s), but will work only if
@@ -125,10 +126,12 @@ Từ đây mình mới tìm hiểu, thiết kế và triển khai. Qua quá trì
 	# Create additional lines for additional domains.
 	*@{domain} {keyname}._domainkey.{domain}
 	*@{domain_customer} {keyname}._domainkey.{domain}
+	```
 
 
 Hoặc cho phép tất cả domain của bên thứ 3 pass qua Dkim thì sửa như sau:
 
+	```
 	vim /etc/opendkim/SigningTable
 	# WILDCARD EXAMPLE
 	# Enables signing for any address on the listed domain(s), but will work only if
@@ -136,6 +139,7 @@ Hoặc cho phép tất cả domain của bên thứ 3 pass qua Dkim thì sửa n
 	# Create additional lines for additional domains.
 	*@{domain} {keyname}._domainkey.{domain}
 	*@* {keyname}._domainkey.{domain}
+	```
 
 
 - Cập nhật lại TrustedHosts
@@ -268,6 +272,7 @@ Thay đổi lại các chỉ số sau:
 
 Tất cả quá trình cài đặt postfix và dkim bạn có thể sử dụng scripts sau để thực hiện:
 
+	```
 	#!/bin/bash
 
 
@@ -361,7 +366,8 @@ Tất cả quá trình cài đặt postfix và dkim bạn có thể sử dụng 
 	echo 'Configure postfix '
 	postconf -e milter_default_action = accept
 	postconf -e smtpd_milters = inet:localhost:8891
-	postconf -e non_smtpd_milters = inet:localhost:8891 
+	postconf -e non_smtpd_milters = inet:localhost:8891
+	```
 
 
 Chúc bạn thành công!
