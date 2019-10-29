@@ -291,6 +291,10 @@ Tất cả quá trình cài đặt postfix và dkim bạn có thể sử dụng 
 	echo -n 'Enter group name/DNS (node|mail) : '
 	read group_name
 
+	echo Install opendkim
+
+	yum install -y postfix
+
 	echo Install EPEL
 	yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 	yum install -y epel-release
