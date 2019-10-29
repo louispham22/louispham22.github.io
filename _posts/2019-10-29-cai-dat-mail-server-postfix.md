@@ -36,28 +36,36 @@ Từ đây mình mới tìm hiểu, thiết kế và triển khai. Qua quá trì
 ** Thực hiện **
 - Cài đặt Postfix
 
+	`
 	sudo yum install -y postfix
+	`
 
 - Cài đặt Opendkim (Do dùng phiên bản Amazon linux AMI 2013 đã cũ nên cần cài Opendkim từ EPEL)
 
-	
+	```
 	sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 	sudo yum install -y epel-release
 	sudo yum-config-manager --enable epel
 	sudo yum install -y opendkim
-	
+	```
 
 - Tạo thư mục chứa key của dkim
 
+	`
 	sudo mkdir /etc/opendkim/keys/{domain}
+	`
 
 - Tạo cặp khóa (Public/Private) trong folder mới tạo
 
+	`
 	sudo opendkim-genkey -D /etc/opendkim/keys/{domain} -d {domain} -s {keyname}
+	`
 
 - Thay đổi chủ sở hữu của folder chứa key thành `opendkim`
 
+	`
 	sudo chown -R opendkim:opendkim /etc/opendkim/keys/{domain}
+	`
 
 - Cấu hình Opendkim
 		
