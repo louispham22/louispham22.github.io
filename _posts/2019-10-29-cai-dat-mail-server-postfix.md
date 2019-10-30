@@ -160,6 +160,8 @@ Hoặc cho phép tất cả domain của bên thứ 3 pass qua Dkim thì sửa n
 	{domain}
 	```
 
+*Note*: TrustedHost sẽ cho phép IP nào được sử dụng Key DKIM. Cho nên cần add thêm IP or dải IP vào TrustedHost nếu muốn gửi mail từ server bên ngoài.
+
 - Cấu hình Postfix
 Thay đổi lại các chỉ số sau:
 
