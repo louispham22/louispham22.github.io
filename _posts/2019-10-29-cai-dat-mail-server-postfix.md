@@ -118,7 +118,7 @@ Từ đây mình mới tìm hiểu, thiết kế và triển khai. Qua quá trì
 	*@{domain} {keyname}._domainkey.{domain}
 	```
 
-*Note*: Nếu bạn muốn gửi thư từ bên thứ 3 thông qua domain của bạn, thì thêm domain của bên thứ 3 vào file SigningTable như sau:
+*Note*: Nếu bạn muốn gửi thư từ bên thứ 3 thông qua domain của bạn mà vẫn được verify với domain của bạn, thì thêm domain của bên thứ 3 vào file SigningTable sử dụng key Dkim domain của bạn như sau:
 
 	```
 	vim /etc/opendkim/SigningTable
