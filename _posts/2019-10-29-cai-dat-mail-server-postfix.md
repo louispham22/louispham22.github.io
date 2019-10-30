@@ -160,7 +160,7 @@ Hoặc cho phép tất cả domain của bên thứ 3 pass qua Dkim thì sửa n
 	10.0.1.10 or 10.0.1.0/24
 	```
 
-*Note*: TrustedHost sẽ cho phép IP nào được sử dụng Key DKIM. Cho nên cần add thêm IP or dải IP vào TrustedHost nếu muốn gửi mail từ server bên ngoài.
+*Note*: TrustedHost sẽ cho phép IP nào được sử dụng Key DKIM. Cho nên cần add thêm IP or dải IP của server mail vào TrustedHost nếu muốn gửi mail từ server bên ngoài.
 
 - Cấu hình Postfix
 Thay đổi lại các chỉ số sau:
