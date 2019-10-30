@@ -118,7 +118,7 @@ Từ đây mình mới tìm hiểu, thiết kế và triển khai. Qua quá trì
 	*@{domain} {keyname}._domainkey.{domain}
 	```
 
-*Note*: Nếu bạn muốn gửi thư từ bên thứ 3 thông qua domain của bạn, thì thêm domain của bên thứ vào file SigningTable như sau:
+*Note*: Nếu bạn muốn gửi thư từ bên thứ 3 thông qua domain của bạn, thì thêm domain của bên thứ 3 vào file SigningTable như sau:
 
 	```
 	vim /etc/opendkim/SigningTable
@@ -157,7 +157,7 @@ Hoặc cho phép tất cả domain của bên thứ 3 pass qua Dkim thì sửa n
 	::1
 	#host.example.com
 	#192.168.1.0/24
-	{domain}
+	10.0.1.10 or 10.0.1.0/24
 	```
 
 *Note*: TrustedHost sẽ cho phép IP nào được sử dụng Key DKIM. Cho nên cần add thêm IP or dải IP vào TrustedHost nếu muốn gửi mail từ server bên ngoài.
