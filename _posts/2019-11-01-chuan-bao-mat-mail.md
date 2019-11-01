@@ -55,15 +55,16 @@ TYPE: TXT
 TTL: 60
 VALUE: "v=DMARC1"
 ```
+Chú thích:
 
 ```
 Tag Name	Purpose	
-v			Protocol version
-pct			Percentage of messages subjected to filtering
-ruf			Reporting URI for forensic reports
-rua			Reporting URI of aggregate reports
-p			Policy for organizational domain
-sp			Policy for subdomains of the OD
+v		Protocol version
+pct		Percentage of messages subjected to filtering
+ruf		Reporting URI for forensic reports
+rua		Reporting URI of aggregate reports
+p		Policy for organizational domain
+sp		Policy for subdomains of the OD
 adkim		Alignment mode for DKIM
 aspf		Alignment mode for SPF
 ```
