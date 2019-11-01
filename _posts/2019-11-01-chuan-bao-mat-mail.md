@@ -15,6 +15,7 @@ Tiếp bài [xây dựng hệ thống mail server](https://tunglouis.github.io/a
 Để xây dựng được một hệ thống mail server thì rất đơn giản. Nhưng để xử lý mal gửi đi vào inbox thì là một việc không hề đơn giản chút nào. Nên mình sẽ tổng hợp một số chuẩn bảo mật cho hệ thống mail.
 
 **Sender Policy Framework (SPF)**
+
 SPF hoạt động theo sơ đồ như sau:
 ![spf](../../images/spf.png)
 
@@ -22,12 +23,14 @@ Sender Policy Framework (SPF) là một phương thức xác thực email đư�
 Bản ghi SPF phải tồn tại trên bản ghi DNS của domain Sender mà dịch vụ email Receiver phải kiểm tra khi nhận được email. [Link gốc SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework).
 
 **DomainKeys Identified Mail (DKIM)**
+
 DKMI hoạt động theo sơ đồ như sau:
 ![dkim](../../images/dkim.png)
 
 DomainKeys Identified Mail (DKIM) là một phương thức xác thực email được thiết kế để phát hiện address Sender giả mạo trong email (email spoofing), một kỹ thuật thường được sử dụng trong phishing (thư lừa đảo) và Email spam (thư rác). [Link gốc DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail).
 
 **Domain-based Message Authentication, Reporting & Conformance (DMARC)**
+
 DMARC hoạt động theo sơ đồ như sau:
 ![dmarc](../../images/dmarc.jpg)
 
@@ -67,6 +70,7 @@ aspf		Alignment mode for SPF
 [Cách cài đặt SPF và DKIM tham khảo tại đây](https://tunglouis.github.io/archivers/xay-dung-mail-server-marketing)
 
 **Transport Layer Security (TLS)**
+
 TLS hoạt động theo sơ đồ như sau:
 ![ssl](../../images/ssl.png)
 
@@ -77,6 +81,7 @@ Bất kỳ dịch vụ email hiện đại nào đều có thể sử dụng TLS
 Năm 2002, bằng cách sử dụng kĩ thuật TLS, STARTTLS đã được phát minh ra với vai trò là một bản nâng cấp dành cho kết nối kém bảo mật thành kết nối an toàn. Nhưng STARTTLS cũng rất dễ bị khai thác bằng kỹ thuật tấn công Man-in-the-Middle (MitM) nhằm làm suy yếu khả năng mã hóa.
 
 **Tại sao StartTLS lại không thể đảm bảo an toàn cho Email ?**
+
 STARTTLS rất dễ bị khai thác bởi kỹ thuật tấn công MitM nhằm làm khả năng mã hoá bị suy yếu do đó giao thức này không thể đảm bảo cơ chế bảo mật cho thông điệp hay xác thực cho máy chủ. Cơ chế hoạt động của giao thức này như sau:
 ![starttls](../../images/starttls.png)
 
