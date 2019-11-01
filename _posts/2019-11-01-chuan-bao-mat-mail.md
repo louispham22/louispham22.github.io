@@ -6,6 +6,8 @@ categories: tips-trick
 permalink: /archivers/chuan-bao-mat-mail
 ---
 
+![email-security](../../images/email-security.jpg)
+
 **Chuẩn bảo mật Mail**
 
 Tiếp bài [xây dựng hệ thống mail server](https://tunglouis.github.io/archivers/xay-dung-mail-server-marketing). Mình sẽ tổng hợp lại 1 số kiến thức apply vào hệ thống mail server để hạn chế mail gửi đi bị vào spam.

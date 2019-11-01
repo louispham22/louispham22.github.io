@@ -35,6 +35,8 @@ Từ đây mình mới tìm hiểu, thiết kế và triển khai. Qua quá trì
 *DMARC là gì*
 - DMARC is an email authentication protocol. It is designed to give email domain owners the ability to protect their domain from unauthorized use, commonly known as email spoofing. (Dịch tiếng việt hơi khó hiểu nên để nguyên bản English :D)
 
+Chi tiết SPF, DKIM, DMARC [xem tại đây](https://tunglouis.github.io/archivers/chuan-bao-mat-mail)
+
 **Thực hiện triển khai**
 - Cài đặt Postfix
 
