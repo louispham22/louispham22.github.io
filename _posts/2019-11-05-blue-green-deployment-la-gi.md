@@ -6,7 +6,7 @@ categories: tips-trick
 permalink: /archivers/blue-green-deployment-la-gi
 ---
 
-![blue-green](../../images/bluegreen1.webp)
+![blue-green](../../images/bluegreen.png)
 
 Trong thời gian công tác tại Nhật, mình có tham gia deploy dự án cho khách hàng. Yêu cầu của người nhật khá là khắt khe về việc deploy mà bị downtime. 
 
