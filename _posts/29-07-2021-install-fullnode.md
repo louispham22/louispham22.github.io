@@ -1,4 +1,10 @@
-# Infrastructure
+---
+layout: post
+title:  "Install Fullnode"
+date:   2019-07-29 08:30
+categories: story
+permalink: /archivers/install-fullnode
+---
 
 
 ## Virtual currency nodes setup
