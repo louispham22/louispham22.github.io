@@ -1,6 +1,6 @@
 # Site settings
 title: Tung Pham's Blog
-url: "https://tunglouis.github.io"    # the protocol and hostname of your site, eg. `https://tunglouis.github.io`
+url: "https://louispham22.github.io"    # the protocol and hostname of your site, eg. `https://tunglouis.github.io`
 #timezone: Asia/Ho_Chi_Minh
 description: >
   One or more sentences introducing this blog.
@@ -14,7 +14,7 @@ profile: One sentence introducing yourself.
 #github_username:  github_username
 profile_links:
   Email: "mailto:tungpv.it@gmail.com"
-  GitHub: "https://github.com/tunglouis/"
+  GitHub: "https://github.com/louispham22/"
   # You can add more profile links above, or edit _includes/sidebar.html 
 
 # Comment Service (Disqus or 多说)
@@ -28,7 +28,7 @@ header:
   links:             # Links on the header. Link to in-site page with a slash as prefix
     About: /about/
     Category: /category/
-    Donate: https://tunglouis.github.io/
+    Donate: https://louispham22.github.io/
 
 permalink: /archivers/:title
 plugins:
